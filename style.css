@@ -1,0 +1,116 @@
+@import url('https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700&family=Lexend+Deca&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root{
+    --first-article-bg : hsl(31, 77%, 52%);
+    --second-article-bg : hsl(184, 100%, 22%);
+    --third-article-bg : hsl(179, 100%, 13%);
+    --text-color : hsla(0, 0%, 100%, 0.75);
+    --container-bg : hsl(0, 0%, 95%);
+
+}
+body{
+    background: hsl(0, 0%, 95%);
+}
+
+main{
+    background: var(--container-bg);
+    display: flex;
+    min-height: 99vh;
+    justify-content: center;
+    align-items: center;
+    max-width: 100%;
+}
+.container{
+    border-radius: 10px;
+    display: flex;
+    width: 55%;
+}
+.child-container{
+    padding: 35px;
+    background: var(--second-article-bg);
+    display: grid;
+    gap: 25px;
+    justify-items: self-start;
+}
+.child-container:first-child{
+    background: var(--first-article-bg);
+    border-radius: 10px 0 0 10px;
+}
+.child-container:last-child{
+    background: var(--third-article-bg);
+    border-radius: 0 10px 10px 0;
+}
+
+.child-container p{
+    color: var(--text-color);
+    font-size: 15px;
+    font-family: 'Lexend Deca', sans-serif;
+    font-weight: 400;
+}
+
+p.text-header{
+    color: var(--container-bg);
+    font-family: 'Big Shoulders Display', cursive;
+    font-size: 35px;
+    text-transform: uppercase;
+}
+
+button{
+    padding: 10px 20px;
+    outline: none;
+    border: none;
+    border-radius: 20px;
+    margin-top: 30px;
+    color: var(--second-article-bg);
+    font-family: 'Lexend Deca', sans-serif;
+    font-weight: 400;
+    background: var(--container-bg);
+    cursor: pointer;
+    border: 2px solid var(--second-article-bg);
+}
+
+.child-container:first-child button{
+    color: var(--first-article-bg);
+    border: 2px solid var(--first-article-bg);
+}
+.child-container:last-child button{
+    color: var(--third-article-bg);
+    border: 2px solid var(--third-article-bg);
+}
+button:hover,
+.child-container:last-child button:hover,
+.child-container:first-child button:hover{
+    background: none;
+    color: var(--container-bg);
+    border: 2px solid var(--container-bg);
+}
+
+
+/* The responsveness for all devices  */
+@media screen and (max-width:1200px) {
+    .container{
+        width: 80%;
+    }
+}
+@media screen and (max-width:600px) {
+    main{
+        padding: 0 20px;
+    }
+    .container{
+        display: grid;
+        width: 100%;
+    }
+
+    .child-container:first-child{
+        border-radius: 10px 10px 0 0;
+    }
+    .child-container:last-child{
+        border-radius: 0 0 10px 10px;
+    }
+}
